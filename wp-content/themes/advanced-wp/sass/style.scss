@@ -1,0 +1,46 @@
+$fontFamStandard: Arial;
+$fontSizeStandard: 15px;
+$fontColorStandard: #666666;
+$backColorStandard: #f7f7f7;
+$transColorStandard: rgba(60, 49, 57, 0.5);
+
+body {
+  background-color: $backColorStandard;
+  color: $fontColorStandard;
+  #page {
+    margin: 0;
+    .site-inner {
+      .header-image {
+        a img {
+          max-width: 1320px;
+          width: 100%;
+        }
+      }
+      header#masthead{
+        padding: 0 20px 0;
+        position: absolute;
+        top: 0;
+        background-color: $transColorStandard;
+        width: 100%;
+        color: #FFFFFF;
+        nav ul li {
+          a {
+            color: #FFFFFF;
+            &:hover {
+              color: $fontColorStandard;
+            }
+          }
+          ul.sub-menu {
+            border: none;
+            li {
+              background-color: $transColorStandard;
+              font-size: 10px;
+              border: none;
+              border-top: 1px solid #000000;
+            }
+          }
+        }
+      }
+    }
+  }
+}
