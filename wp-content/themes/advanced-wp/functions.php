@@ -252,7 +252,7 @@ function twentysixteen_scripts() {
 	// Theme stylesheet.
 	wp_enqueue_style( 'twentysixteen-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'style', get_template_directory_uri() . '/sass/style.css', array(), '1.0.0' );
-
+	
 	// Load the Internet Explorer specific stylesheet.
 	wp_enqueue_style( 'twentysixteen-ie', get_template_directory_uri() . '/css/ie.css', array( 'twentysixteen-style' ), '20160412' );
 	wp_style_add_data( 'twentysixteen-ie', 'conditional', 'lt IE 10' );
@@ -420,3 +420,5 @@ function twentysixteen_widget_tag_cloud_args( $args ) {
 	return $args;
 }
 add_filter( 'widget_tag_cloud_args', 'twentysixteen_widget_tag_cloud_args' );
+
+require_once (dirname(__FILE__) . '/sample/barebones-config.php');
