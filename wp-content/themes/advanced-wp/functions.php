@@ -181,6 +181,42 @@ function twentysixteen_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+	register_sidebar( array(
+		'name'          => __( 'Footer 1', 'twentysixteen' ),
+		'id'            => 'footer-1',
+		'description'   => __( 'Appears at the bottom of the content on posts and pages.', 'twentysixteen' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Footer 2', 'twentysixteen' ),
+		'id'            => 'footer-2',
+		'description'   => __( 'Appears at the bottom of the content on posts and pages.', 'twentysixteen' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Footer 3', 'twentysixteen' ),
+		'id'            => 'footer-3',
+		'description'   => __( 'Appears at the bottom of the content on posts and pages.', 'twentysixteen' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Footer 4', 'twentysixteen' ),
+		'id'            => 'footer-4',
+		'description'   => __( 'Appears at the bottom of the content on posts and pages.', 'twentysixteen' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
 }
 add_action( 'widgets_init', 'twentysixteen_widgets_init' );
 

@@ -409,6 +409,107 @@
             ),
         )
     ) );
+    Redux::setSection( $opt_name, array(
+        'title'            => __( 'Footer', 'lexander-redux' ),
+        'id'               => 'Footer',
+        'subsection'       => false,
+        'icon'       => 'el-icon-photo',
+        'customizer_width' => '450px',
+        'fields'           => array(
+            array(
+                'id'       => 'footer_widgets',
+                'type'     => 'switch',
+                'title'    => __('Enable footer widgets area.', 'lexander-redux-redux'),
+                'default'  => true,
+            ),
+            array(
+                'id'      => 'footer_columns',
+                'type'    => 'button_set',
+                'title'   => __( 'Footer Columns', 'lexander-redux-redux' ),
+                'desc'    => __( 'Select the number of columns you would like for your footer widgets area.', 'lexander-redux-redux' ),
+                'type'    => 'button_set',
+                'default' => '4',
+                'required' => array('footer_widgets','=',true, ),
+                'options' => array(
+                    '1'   => __( '1 Columns', 'lexander-redux-redux' ),
+                    '2'   => __( '2 Columns', 'lexander-redux-redux' ),
+                    '3'   => __( '3 Columns', 'lexander-redux-redux' ),
+                    '4'   => __( '4 Columns', 'lexander-redux-redux' ),
+                ),
+            ),
+            array(
+                'id'       =>'footer_copyright',
+                'type'     => 'textarea',
+                'title'    => __('Footer Copyright', 'lexander-redux-redux'),
+                'subtitle' => __('Enter the copyright section text.', 'lexander-redux-redux'),
+            ),
+
+            array(
+                'id'       => 'footer_custom_color',
+                'type'     => 'switch',
+                'title'    => __('Custom your footer style?.', 'lexander-redux-redux'),
+                'default'  => false,
+            ),
+            array(
+                'id'       => 'footer_bg',
+                'type'     => 'background',
+                'compiler' => true,
+                'output'   => array('.site-footer'),
+                'title'    => __('Footer Background', 'lexander-redux-redux'),
+                'required' => array('footer_custom_color','=',true, ),
+                'default'  => array(
+                    'background-color' => '#111111',
+                )
+            ),
+            array(
+                'id'       => 'footer_widget_title_color',
+                'type'     => 'color',
+                'compiler' => true,
+                'output'   => array('.site-footer .footer-columns .footer-column .widget .widget-title'),
+                'title'    => __('Footer Widget Title Color', 'lexander-redux-redux'),
+                'default'  => '#eeeeee',
+                'required' => array('footer_custom_color','=',true, )
+            ),
+            array(
+                'id'       => 'footer_text_color',
+                'type'     => 'color',
+                'compiler' => true,
+                'output'   => array('.site-footer, .site-footer .widget, .site-footer p'),
+                'title'    => __('Footer Text Color', 'lexander-redux-redux'),
+                'default'  => '#999999',
+                'required' => array('footer_custom_color','=',true, )
+            ),
+            array(
+                'id'       => 'footer_link_color',
+                'type'     => 'color',
+                'compiler' => true,
+                'output'   => array('.site-footer a, .site-footer .widget a'),
+                'title'    => __('Footer Link Color', 'lexander-redux-redux'),
+                'default'  => '#dddddd',
+                'required' => array('footer_custom_color','=',true, )
+            ),
+            array(
+                'id'       => 'footer_link_color_hover',
+                'type'     => 'color',
+                'compiler' => true,
+                'output'   => array('.site-footer a:hover, .site-footer .widget a:hover'),
+                'title'    => __('Footer Link Color Hover', 'lexander-redux-redux'),
+                'default'  => '#ffffff',
+                'required' => array('footer_custom_color','=',true, )
+            ),
+            array(
+                'id'       => 'site_info_bg',
+                'type'     => 'background',
+                'compiler' => true,
+                'output'   => array('.site-info-wrapper'),
+                'title'    => __('Site Info Background', 'lexander-redux-redux'),
+                'required' => array('footer_custom_color','=',true, ),
+                'default'  => array(
+                )
+
+            ),
+        )
+    ));
 
     /*
      * <--- END SECTIONS

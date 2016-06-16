@@ -13,31 +13,30 @@
 		</div><!-- .site-content -->
 
 		<footer id="colophon" class="site-footer" role="contentinfo">
-			<?php if ( has_nav_menu( 'primary' ) ) : ?>
-				<nav class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Primary Menu', 'twentysixteen' ); ?>">
-					<?php
-						wp_nav_menu( array(
-							'theme_location' => 'primary',
-							'menu_class'     => 'primary-menu',
-						 ) );
-					?>
-				</nav><!-- .main-navigation -->
-			<?php endif; ?>
 
-			<?php if ( has_nav_menu( 'social' ) ) : ?>
-				<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Social Links Menu', 'twentysixteen' ); ?>">
-					<?php
-						wp_nav_menu( array(
-							'theme_location' => 'social',
-							'menu_class'     => 'social-links-menu',
-							'depth'          => 1,
-							'link_before'    => '<span class="screen-reader-text">',
-							'link_after'     => '</span>',
-						) );
-					?>
-				</nav><!-- .social-navigation -->
-			<?php endif; ?>
+			<div class="container">
+				<?php
+					global $opt_lexander_redux;
 
+					if ( $opt_lexander_redux ) { ?>
+					<div class="footer-widgets-area">
+						<?php $footer_columns = $opt_lexander_redux['footer_columns']; ?>
+						<?php if ( is_active_sidebar( 'footer-1' ) || is_active_sidebar( 'footer-2' ) || is_active_sidebar( 'footer-3' ) || is_active_sidebar( 'footer-4' ) ) { ?>
+							<div class="sidebar-footer footer-columns footer-<?php echo $footer_columns ?>-columns clearfix">
+								<?php
+								for ( $count = 1; $count <= $footer_columns; $count++ ) {
+									?>
+									<div id="footer-<?php echo $count ?>" class="footer-<?php echo $count ?> footer-column widget-area" role="complementary">
+										<?php dynamic_sidebar('footer-'.$count);?>
+									</div>
+									<?php
+								}
+								?>
+							</div>
+						<?php } ?>
+					</div>
+				<?php } ?>
+			</div>
 			<div class="site-info">
 				<?php
 					/**

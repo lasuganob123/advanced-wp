@@ -7,15 +7,15 @@ $transColorStandard: rgba(60, 49, 57, 0.5);
 body {
   background-color: $backColorStandard;
   color: $fontColorStandard;
+
   #page {
     margin: 0;
+    background-color: #f7f7f7;
+
     .site-inner {
-      .header-image {
-        a img {
-          max-width: 1320px;
-          width: 100%;
-        }
-      }
+      background-color: #ffffff;
+      box-shadow: 0 0 10px $fontColorStandard;
+
       header#masthead{
         padding: 20px 20px 0;
         position: absolute;
@@ -23,14 +23,17 @@ body {
         background-color: rgba(0, 0, 0 , 0.5);
         width: 100%;
         color: #FFFFFF;
+
         #header-top {
           text-align: right;
           padding-top: 20px;
+
           a {
             color: #fff;
             border-radius: 50%;
             border: 1px solid;
             margin: 0 5px;
+
             &:hover {
               color: #000000;
             }
@@ -38,16 +41,20 @@ body {
               padding: 0 5px;
             }
           }
-        }        
+        }
+
         nav ul li {
+
           a {
             color: #FFFFFF;
             &:hover {
               color: $fontColorStandard;
             }
           }
+
           ul.sub-menu {
             border: none;
+
             li {
               background-color: $transColorStandard;
               font-size: 10px;
@@ -55,6 +62,70 @@ body {
               border-top: 1px solid #000000;
             }
           }
+        }
+      }
+
+      div#content {
+        padding: 0;
+
+        div#primary {
+
+          main {
+            overflow: hidden;
+
+            div#introduction {
+              margin: 0;
+            }
+
+            .profile-picture {
+                margin-bottom: 0;
+
+              figure {
+                border-radius: 50%;
+                border: 1px solid;
+                overflow:hidden;
+              }
+            }
+          }
+        }
+      }
+    }
+    footer.site-footer {
+      div.container {
+        display: block;
+        width: 100%;
+
+        div.footer-widgets-area {
+
+          div.footer-columns {
+
+            div.footer-column {
+              display: inline-block;
+              float: left;
+            }
+          }
+
+          div.footer-2-columns {
+
+             div.footer-column {
+               width: 48%;
+             }
+           }
+
+          div.footer-3-columns {
+
+            div.footer-column {
+              width: 32.3333%;
+            }
+          }
+
+          div.footer-4-columns {
+
+            div.footer-column {
+              width: 23%;
+            }
+          }
+
         }
       }
     }
