@@ -1,12 +1,31 @@
+@font-face {
+  font-family: 'Montserrat-Light';
+  src: url("../fonts/Montserrat-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Montserrat-Light.otf") format("opentype"), url("../fonts/Montserrat-Light.woff") format("woff"), url("../fonts/Montserrat-Light.ttf") format("truetype"), url("../fonts/Montserrat-Light.svg#Montserrat-Light") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'MistralITC-Light';
+  src: url("../fonts/MistralITC-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/MistralITC-Light.woff") format("woff"), url("../fonts/MistralITC-Light.ttf") format("truetype"), url("../fonts/MistralITC-Light.svg#MistralITC-Light") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+body {
+  font-family: 'Montserrat-Light' !important; }
+
+body:not(.custom-background-image).admin-bar:before {
+  display: none; }
+
 body {
   background-color: #f7f7f7;
-  color: #666666; }
+  color: #666666;
+  font-family: Montserrat-Light !important; }
   body #page {
     margin: 0;
     background-color: #f7f7f7; }
     body #page .site-inner {
       background-color: #ffffff;
       box-shadow: 0 0 10px #666666; }
+      body #page .site-inner header#masthead.not-frontpage {
+        position: relative; }
       body #page .site-inner header#masthead {
         padding: 20px 20px 0;
         position: absolute;
@@ -52,6 +71,14 @@ body {
     body #page footer.site-footer div.container {
       display: block;
       width: 100%; }
+      body #page footer.site-footer div.container div.footer-widgets-area div#footer-1 section ul {
+        list-style: none;
+        columns: 100px 2;
+        margin: 0; }
+        body #page footer.site-footer div.container div.footer-widgets-area div#footer-1 section ul li {
+          padding: 5px; }
+          body #page footer.site-footer div.container div.footer-widgets-area div#footer-1 section ul li ul.sub-menu {
+            display: none; }
       body #page footer.site-footer div.container div.footer-widgets-area div.footer-columns div.footer-column {
         display: inline-block;
         float: left; }

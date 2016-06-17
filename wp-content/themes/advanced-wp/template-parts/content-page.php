@@ -7,12 +7,21 @@
  * @since Twenty Sixteen 1.0
  */
 ?>
+<?php
+	global $post;
+	$post_slug = $post->post_name;
+?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+	<header class="entry-header <?php echo $post_slug; ?>">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
-
+	<div class="breadcrumbs" typeof="BreadcrumbList" vocab="http://schema.org/">
+		<?php if(function_exists('bcn_display'))
+		{
+			bcn_display();
+		}?>
+	</div>
 	<?php twentysixteen_post_thumbnail(); ?>
 
 	<div class="entry-content">

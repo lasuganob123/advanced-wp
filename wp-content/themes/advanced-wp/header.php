@@ -8,7 +8,7 @@
  * @subpackage Twenty_Sixteen
  * @since Twenty Sixteen 1.0
  */
-
+global $opt_lexander_redux;
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
@@ -19,17 +19,23 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<?php endif; ?>
 	<?php wp_head(); ?>
+	<style><?php echo $opt_lexander_redux['site_css']; ?></style>
 </head>
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 	<div class="site-inner">
 		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentysixteen' ); ?></a>
-		<?php echo do_shortcode('[rev_slider alias="header-slider"]'); ?>
-		<header id="masthead" class="site-header" role="banner">
+		<?php
+			$is_front_page = 0;
+			if( is_front_page() ) {
+				echo do_shortcode('[rev_slider alias="header-slider"]');
+				$is_front_page = 1;
+			}
+		?>
+		<header id="masthead" class="site-header <?php if( $is_front_page == 0) { echo "not-frontpage"; }?>" role="banner">
 			<div id="header-top">
 				<?php
-				global $opt_lexander_redux;
 				$arr = array("twitter", "facebook", "linkedin", "pinterest", "google-plus", "instagram", "youtube", "envelope", "rss");
 
 				foreach($arr as $social_media):

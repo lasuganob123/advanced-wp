@@ -1,4 +1,6 @@
-$fontFamStandard: Arial;
+@import 'font';
+
+$fontFamStandard: Montserrat-Light;
 $fontSizeStandard: 15px;
 $fontColorStandard: #666666;
 $backColorStandard: #f7f7f7;
@@ -7,6 +9,7 @@ $transColorStandard: rgba(60, 49, 57, 0.5);
 body {
   background-color: $backColorStandard;
   color: $fontColorStandard;
+  font-family: $fontFamStandard !important;
 
   #page {
     margin: 0;
@@ -15,6 +18,10 @@ body {
     .site-inner {
       background-color: #ffffff;
       box-shadow: 0 0 10px $fontColorStandard;
+
+      header#masthead.not-frontpage {
+        position: relative;
+      }
 
       header#masthead{
         padding: 20px 20px 0;
@@ -42,7 +49,7 @@ body {
             }
           }
         }
-
+        
         nav ul li {
 
           a {
@@ -96,6 +103,26 @@ body {
         width: 100%;
 
         div.footer-widgets-area {
+
+          div#footer-1 {
+
+            section {
+
+              ul {
+                list-style: none;
+                columns: 100px 2;
+                margin: 0;
+
+                li {
+                  padding: 5px;
+
+                  ul.sub-menu {
+                    display: none;
+                  }
+                }
+              }
+            }
+          }
 
           div.footer-columns {
 

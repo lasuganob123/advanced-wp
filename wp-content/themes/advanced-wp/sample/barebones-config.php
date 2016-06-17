@@ -510,6 +510,25 @@
             ),
         )
     ));
+    Redux::setSection( $opt_name, array(
+        'title'            => __( 'Custom CSS', 'lexander-redux' ),
+        'id'               => 'custom-css',
+        'subsection'       => false,
+        'icon'             => 'el-icon-css',
+        'customizer_width' => '450px',
+        'fields'           => array(
+            array(
+                'id'       => 'site_css',
+                'type'     => 'ace_editor',
+                'title'    => __( 'CSS Code', 'lexander-redux' ),
+                'subtitle' => __( 'Paste your custom CSS code here.', 'lexander-redux' ),
+                'mode'     => 'css',
+                'theme'    => 'monokai',
+                'desc'     => 'Possible modes can be found at <a href="'. esc_url( 'http://ace.c9.io' ) .'" target="_blank">'. esc_attr( 'http://ace.c9.io' ) .'</a>.',
+                'default'  => ""
+            ),
+        )
+    ));
 
     /*
      * <--- END SECTIONS
